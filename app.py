@@ -21,20 +21,50 @@ if uploaded_image:
 else:
     st.info("Por favor carga una imagen para mostrarla aquí")
 
-# Sidebar information
+# Sidebar with theme selector
 with st.sidebar:
     st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Iconic_image_of_Earth_from_space.jpg/320px-Iconic_image_of_Earth_from_space.jpg", use_column_width=True)
     st.subheader("🌍 Bienvenido a tu asistente RAG")
     st.write("Aquí podrás analizar documentos PDF y resolver tus dudas con ayuda de la IA.")
     
-    # Un pequeño detalle divertido
     st.markdown("---")
     st.write("✨ Tip del día:")
     st.info("Recuerda que el conocimiento es mejor cuando se comparte.")
     
-    # Agregar un selector de tema visual
+    # Theme selector
     theme = st.radio("Elige tu estilo:", ["🌞 Claro", "🌙 Oscuro", "🌈 Colorido"])
-    st.write(f"Has elegido el tema: {theme}")
+
+# Apply theme styles
+if theme == "🌞 Claro":
+    st.markdown(
+        """
+        <style>
+        body { background-color: #ffffff; color: #000000; }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+elif theme == "🌙 Oscuro":
+    st.markdown(
+        """
+        <style>
+        body { background-color: #0e1117; color: #fafafa; }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+elif theme == "🌈 Colorido":
+    st.markdown(
+        """
+        <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390, #fbc531);
+            color: #000000;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 # Get API key from user
 ke = st.text_input('Ingresa tu Clave de OpenAI', type="password")
