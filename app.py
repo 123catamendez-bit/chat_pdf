@@ -23,7 +23,6 @@ else:
 
 # Sidebar with theme selector
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Iconic_image_of_Earth_from_space.jpg/320px-Iconic_image_of_Earth_from_space.jpg", use_column_width=True)
     st.subheader("🌍 Bienvenido a tu asistente RAG")
     st.write("Aquí podrás analizar documentos PDF y resolver tus dudas con ayuda de la IA.")
     
