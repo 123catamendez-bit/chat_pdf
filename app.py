@@ -13,12 +13,13 @@ import platform
 st.title('Generación Aumentada por Recuperación (RAG) 💬')
 st.write("Versión de Python:", platform.python_version())
 
-# Load and display image
-try:
-    image = Image.open('Isa.png')
-    st.image(image, width=350)
-except Exception as e:
-    st.warning(f"No se pudo cargar la imagen: {e}")
+# Permitir al usuario subir una imagen
+uploaded_image = st.file_uploader("Carga una imagen", type=["png", "jpg", "jpeg"])
+if uploaded_image:
+    image = Image.open(uploaded_image)
+    st.image(image, width=350, caption="Imagen cargada por el usuario")
+else:
+    st.info("Por favor carga una imagen para mostrarla aquí")
 
 # Sidebar information
 with st.sidebar:
