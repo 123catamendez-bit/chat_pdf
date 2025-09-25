@@ -23,7 +23,18 @@ else:
 
 # Sidebar information
 with st.sidebar:
-    st.subheader("Este Agente te ayudará a realizar análisis sobre el PDF cargado")
+    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Iconic_image_of_Earth_from_space.jpg/320px-Iconic_image_of_Earth_from_space.jpg", use_column_width=True)
+    st.subheader("🌍 Bienvenido a tu asistente RAG")
+    st.write("Aquí podrás analizar documentos PDF y resolver tus dudas con ayuda de la IA.")
+    
+    # Un pequeño detalle divertido
+    st.markdown("---")
+    st.write("✨ Tip del día:")
+    st.info("Recuerda que el conocimiento es mejor cuando se comparte.")
+    
+    # Agregar un selector de tema visual
+    theme = st.radio("Elige tu estilo:", ["🌞 Claro", "🌙 Oscuro", "🌈 Colorido"])
+    st.write(f"Has elegido el tema: {theme}")
 
 # Get API key from user
 ke = st.text_input('Ingresa tu Clave de OpenAI', type="password")
