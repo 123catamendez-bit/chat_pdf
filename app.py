@@ -34,32 +34,61 @@ with st.sidebar:
     # Theme selector
     theme = st.radio("Elige tu estilo:", ["🌞 Claro", "🌙 Oscuro", "🌈 Colorido"])
 
-# Apply theme styles
+# Apply theme styles dynamically
 if theme == "🌞 Claro":
     st.markdown(
         """
         <style>
-        body { background-color: #ffffff; color: #000000; }
+        .stApp {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .stButton>button {
+            background-color: #4CAF50;
+            color: white;
+        }
         </style>
         """,
         unsafe_allow_html=True
     )
+
 elif theme == "🌙 Oscuro":
     st.markdown(
         """
         <style>
-        body { background-color: #0e1117; color: #fafafa; }
+        .stApp {
+            background-color: #0e1117;
+            color: #fafafa;
+        }
+        .stButton>button {
+            background-color: #333333;
+            color: #fafafa;
+        }
+        textarea, input {
+            background-color: #262730 !important;
+            color: #fafafa !important;
+        }
         </style>
         """,
         unsafe_allow_html=True
     )
+
 elif theme == "🌈 Colorido":
     st.markdown(
         """
         <style>
-        body {
+        .stApp {
             background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390, #fbc531);
             color: #000000;
+        }
+        .stButton>button {
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 10px;
+        }
+        textarea, input {
+            background-color: #fff8e7 !important;
+            color: #333333 !important;
         }
         </style>
         """,
